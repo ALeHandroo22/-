@@ -1,0 +1,99 @@
+body{
+    margin: 0 ;
+}
+
+.header-logo{
+    background-image: url(./images/баннер.jpg);
+    max-width: 100%;
+    height: 300px;
+}
+
+.header-navigation{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+
+}
+
+.header-navigation li  {
+    list-style: none;
+}
+
+.header-navigation li a {
+    color: black;
+    text-decoration: none;
+    
+}
+
+#main-station-container{
+display: flex;
+gap: 5px;
+flex-wrap: wrap;
+margin: 0 auto;
+max-width: 1280px;
+
+
+
+}
+.div-element{
+
+    width: 420px;
+    height: 250px;
+    background-color: aqua;
+    
+}
+
+
+.footer-container{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background-color: aquamarine;
+}
+
+
+/* стили для календаря и для html в reservation.html */
+
+.week{
+    width: 310px;
+    border: 1px solid orange;
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    gap:2px;
+    
+}
+
+.week div{
+    background-color: aqua;
+    width: 40px;
+    height: 40px;
+    border: 1px solid ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cells{
+    border: 1px solid orange;
+    width: 310px;
+    gap: 2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    justify-items:stretch;
+}
+
+.nubmers-cells{
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nubmers-cells:hover{
+    background-color: gray;
+}
