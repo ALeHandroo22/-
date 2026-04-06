@@ -1,4 +1,4 @@
-
+const div = document.getElementById('main-station-container')
 
 // index.js
 async function getAvailableSlots() {
@@ -16,7 +16,7 @@ getAvailableSlots().then((data)=>{
     console.log(data)
 
 for (let i =0;i<data.length;i++){
-    const div = document.getElementById('main-station-container')
+    
     let element = document.createElement('div')
     element.innerHTML = `<div class="div-element">
                 <h2>adress:${data[i].adress}</h2>
@@ -31,14 +31,23 @@ for (let i =0;i<data.length;i++){
     div.appendChild(element)
     console.log("добавил")
 }
+})
 
+div.addEventListener('click',(e)=>{
+    
+    
 
+    if (e.target.matches('.div-element')){
+        console.log(e.target)
+    }
+    
+    if (e.target.closest('.div-element')){
+        console.log(e.target)
+    }
 
 
 
 })
-
-
 
 
 
