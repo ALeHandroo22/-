@@ -20,26 +20,24 @@
         </nav>
     </header>
     <main>
-        <h1>Забронировать на <input type="date"></h1>
-        <div class="calendar">
-            <div>
-                <!--месяц и год-->
-            </div> 
-            <div class="week">
-                <div>Пн</div>
-                <div>Вт</div>
-                <div>Ср</div>
-                <div>Чт</div>
-                <div>Пт</div>
-                <div>Сб</div>
-                <div>Вс</div>
-            </div>
-            <div id="cells">
-                <!--ячейки дней-->
-               
-                
-            </div>
+        <h1>Забронировать</h1>
+    <div class="calendar" id="calendar">
+        <div class="calendar-header">
+            <button id="prev-month" class="nav-btn">←</button>
+            <div id="month-year" class="month-year"></div>
+            <button id="next-month" class="nav-btn">→</button>
+        </div> 
+        <div class="week">
+            <div>Пн</div>
+            <div>Вт</div>
+            <div>Ср</div>
+            <div>Чт</div>
+            <div>Пт</div>
+            <div>Сб</div>
+            <div>Вс</div>
         </div>
+        <div id="cells"></div>
+    </div>
 
         
     </main>

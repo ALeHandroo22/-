@@ -57,43 +57,103 @@ max-width: 1280px;
 
 /* стили для календаря и для html в reservation.html */
 
-.week{
-    width: 310px;
-    border: 1px solid orange;
+/* Обертка для всего календаря */
+.calendar {
+    width: 100%;
+    max-width: 350px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование */
+    font-family: Arial, sans-serif;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-sizing: border-box; /* Важно! Учитывает padding в ширине */
+}
+
+/* Убеждаемся, что все дочерние элементы не вылезают */
+.calendar * {
+    box-sizing: border-box;
+}
+
+/* Дни недели */
+.week {
+    width: 100%;
     display: grid;
-    grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-    gap:2px;
-    
-}
-
-.week div{
-    background-color: aqua;
-    width: 40px;
-    height: 40px;
-    border: 1px solid ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#cells{
-    border: 1px solid orange;
-    width: 310px;
+    grid-template-columns: repeat(7, minmax(0, 1fr)); /* minmax(0, 1fr) вместо 1fr */
     gap: 2px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-    justify-items:stretch;
+    margin-bottom: 2px;
+    background-color: orange;
 }
 
-.nubmers-cells{
-    width: 40px;
+.week div {
+    background-color: #ff9800;
+    color: white;
+    font-weight: bold;
     height: 40px;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 12px; /* Уменьшил шрифт */
+    padding: 0 2px;
+    white-space: nowrap;
 }
 
-.nubmers-cells:hover{
-    background-color: gray;
+/* Контейнер для ячеек */
+#cells {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr)); /* minmax(0, 1fr) */
+    gap: 2px;
+    background-color: orange;
+    user-select: none;
 }
+
+/* Ячейки с числами */
+.numbers-cells {
+    background-color: #f0f0f0;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 0 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.numbers-cells:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.02);
+}
+
+/* Пустые ячейки */
+.empty-cell {
+    background-color: transparent;
+    height: 40px;
+}
+
+/* Выделенная ячейка */
+.numbers-cells.selected {
+    background-color: #2196F3;
+    color: white;
+    transform: scale(1.02);
+}
+
+/* Прошедшие даты */
+.numbers-cells.past {
+    background-color: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.numbers-cells.past:hover {
+    background-color: #e0e0e0;
+    transform: none;
+}
+

@@ -98,4 +98,26 @@ def get_available_slots():
         if i["busy"] == False:
             find_station.append(i)
     return find_station
+
+
+# это степик решаю
+
+class SUserCreate(BaseModel):
+    username : str
+    password : int
+        
+class SUserRead(SUserCreate):
+    id : int
+
+
+
+
+@app.post("/users", response_model=SUserRead)
+async def create_user(user: SUserCreate ):
+    # Превратите user в dict, добавьте id=1 и верните
     
+    data = user.model_dump()
+    data['id']= 1
+    del data['password']
+    
+    return data
